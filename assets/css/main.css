@@ -1,0 +1,159 @@
+/* ============================================================
+   My Toolbox — main stylesheet
+   Large print is a hard requirement: base 20px, generous leading,
+   restrained measure, high contrast.
+   Palette is deliberately distinct from Keep Your Heart's book-plate
+   navy/amber — softer, closer to the devotional-oil-painting art style.
+   ============================================================ */
+
+:root{
+  --paper:#f7f1e4;
+  --paper-2:#efe6d2;
+  --ink:#2e3440;
+  --ink-soft:#4f5b6b;
+  --rule:#ded2b4;
+  --blue:#3f5f8a;
+  --blue-soft:#6f8fb8;
+  --blue-tint:#e8eef6;
+  --gold:#a9812f;
+  --gold-soft:#c9a24b;
+  --gold-tint:#f5ecd8;
+  --measure:36rem;
+}
+
+*{box-sizing:border-box;}
+
+html{font-size:20px;scroll-behavior:smooth;}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"EB Garamond","Cormorant Garamond",Georgia,"Times New Roman",serif;
+  font-size:1rem;
+  line-height:1.7;
+  -webkit-text-size-adjust:100%;
+}
+
+.wrap{max-width:44rem;margin:0 auto;padding:0 1.25rem;}
+
+/* ---------- Masthead ---------- */
+
+header.mast{
+  background:var(--blue);
+  color:var(--paper);
+  border-bottom:4px solid var(--gold-soft);
+}
+header.mast .wrap{padding:1.4rem 1.25rem;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.5rem;}
+header.mast a{color:var(--paper);text-decoration:none;}
+header.mast .title{font-size:1.4rem;letter-spacing:.02em;font-weight:600;}
+header.mast .sub{font-size:.78rem;color:#d7e2ee;font-style:italic;}
+header.mast nav a{font-size:.82rem;color:#d7e2ee;margin-left:1rem;text-decoration:none;}
+header.mast nav a:hover{color:var(--paper);text-decoration:underline;}
+
+/* ---------- Main content ---------- */
+
+main{max-width:var(--measure);margin:0 auto;padding:2.5rem 1.25rem 5rem;}
+
+h1{font-size:1.9rem;line-height:1.25;margin:.3rem 0 .2rem;font-weight:600;}
+h2{font-size:1.25rem;margin:2.2rem 0 .7rem;color:var(--blue);font-weight:600;}
+p{margin:0 0 1.1rem;}
+a{color:var(--gold);}
+a:hover{color:var(--gold-soft);}
+
+.dek{font-size:1.05rem;color:var(--ink-soft);font-style:italic;margin:0 0 1.6rem;}
+
+/* ---------- Category badge ---------- */
+
+.badge{
+  display:inline-block;
+  font-family:"Helvetica Neue",Arial,sans-serif;
+  font-size:.72rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:.28rem .7rem;
+  border-radius:99px;
+  margin-bottom:.9rem;
+}
+.badge.pattern{background:var(--blue-tint);color:var(--blue);}
+.badge.modality{background:var(--gold-tint);color:var(--gold);}
+
+/* ---------- Art slot: graceful placeholder if no image yet ---------- */
+
+.art{
+  aspect-ratio:1024/572;
+  border-radius:10px;
+  margin:0 0 1.8rem;
+  background:linear-gradient(135deg,var(--gold-tint) 0%,var(--paper-2) 45%,var(--blue-tint) 100%);
+  border:1px solid var(--rule);
+}
+.art img{width:100%;height:100%;object-fit:cover;border-radius:10px;display:block;}
+
+/* ---------- Term card (used inside pattern pages) ---------- */
+
+.card{
+  background:var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:10px;
+  padding:1.1rem 1.3rem;
+  margin:0 0 1.3rem;
+}
+.card h3{margin:0 0 .4rem;font-size:1rem;color:var(--blue);font-weight:600;}
+.card p:last-child{margin-bottom:0;}
+
+/* ---------- Related-tools list ---------- */
+
+.related{list-style:none;margin:0 0 1.1rem;padding:0;}
+.related li{
+  padding:.6rem 0;
+  border-top:1px solid var(--rule);
+  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+}
+.related li:last-child{border-bottom:1px solid var(--rule);}
+.related .tag{font-family:"Helvetica Neue",Arial,sans-serif;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap;}
+.related .soon{color:var(--ink-soft);font-style:italic;}
+
+/* ---------- Look-up closing block ---------- */
+
+.lookup{
+  margin-top:2.4rem;
+  padding-top:1.4rem;
+  border-top:2px solid var(--gold-tint);
+}
+.lookup h2{margin-top:0;}
+
+/* ---------- Pattern vs modality register ---------- */
+
+.tool-page.pattern main{max-width:32rem;}
+.tool-page.pattern h2{font-size:1.1rem;margin-top:1.7rem;}
+.tool-page.pattern p{margin-bottom:.85rem;}
+
+.tool-page.modality main{max-width:38rem;}
+.tool-page.modality p{line-height:1.78;}
+
+/* ---------- Glossary index ---------- */
+
+.tool-index{list-style:none;margin:0;padding:0;}
+.tool-index li{padding:1.2rem 0;border-top:1px solid var(--rule);}
+.tool-index li:last-child{border-bottom:1px solid var(--rule);}
+.tool-index h3{margin:0 0 .3rem;font-size:1.05rem;}
+.tool-index h3 a{text-decoration:none;color:var(--ink);}
+.tool-index h3 a:hover{color:var(--gold);}
+.tool-index .how{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+.tool-index .soon-tag{font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);font-family:"Helvetica Neue",Arial,sans-serif;}
+
+.section-label{
+  font-family:"Helvetica Neue",Arial,sans-serif;
+  font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-soft);
+  margin:2.6rem 0 .6rem;
+}
+.section-label:first-of-type{margin-top:0;}
+
+footer.site{
+  border-top:1px solid var(--rule);
+  padding:2rem 1.25rem;
+  text-align:center;
+  font-size:.8rem;
+  color:var(--ink-soft);
+}
