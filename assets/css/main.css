@@ -18,6 +18,8 @@
   --gold:#a9812f;
   --gold-soft:#c9a24b;
   --gold-tint:#f5ecd8;
+  --rose:#a35c56;
+  --rose-tint:#f3e6e2;
   --measure:36rem;
 }
 
@@ -121,6 +123,7 @@ a:hover{color:var(--gold-soft);}
 }
 .badge.pattern{background:var(--blue-tint);color:var(--blue);}
 .badge.modality{background:var(--gold-tint);color:var(--gold);}
+.badge.dynamic{background:var(--rose-tint);color:var(--rose);}
 
 /* ---------- Art slot: graceful placeholder if no image yet ---------- */
 
@@ -171,6 +174,10 @@ a:hover{color:var(--gold-soft);}
 .tool-page.pattern main{max-width:32rem;}
 .tool-page.pattern h2{font-size:1.1rem;margin-top:1.7rem;}
 .tool-page.pattern p{margin-bottom:.85rem;}
+
+.tool-page.dynamic main{max-width:32rem;}
+.tool-page.dynamic h2{font-size:1.1rem;margin-top:1.7rem;}
+.tool-page.dynamic p{margin-bottom:.85rem;}
 
 .tool-page.modality main{max-width:38rem;}
 .tool-page.modality p{line-height:1.78;}
