@@ -69,7 +69,19 @@ header.mast nav a:hover{color:var(--paper);text-decoration:underline;}
 
 @media(min-width:56em){
   .layout{grid-template-columns:13.5rem 1fr;gap:2.8rem;}
-  .layout .sidebar{order:0;position:sticky;top:1.5rem;}
+  .layout .sidebar{
+    order:0;
+    position:sticky;
+    top:1.5rem;
+    max-height:calc(100vh - 3rem);
+    overflow-y:auto;
+    padding-right:.6rem;
+    scrollbar-width:thin;
+    scrollbar-color:var(--gold-soft) var(--paper-2);
+  }
+  .layout .sidebar::-webkit-scrollbar{width:8px;}
+  .layout .sidebar::-webkit-scrollbar-track{background:var(--paper-2);border-radius:8px;}
+  .layout .sidebar::-webkit-scrollbar-thumb{background:var(--gold-soft);border-radius:8px;}
   .layout main{order:1;}
 }
 
