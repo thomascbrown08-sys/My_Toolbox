@@ -52,8 +52,9 @@ Nothing else in the project is waiting on anything else.
 
 Pick these up whenever. None of them is waiting on anything.
 
-4. **Convert the Helper's four drills to transcripts.** *(Four masks now use the transcript pattern; the
-   Helper is the only page left in the old narrated style.)* They are now visibly the old narrated style beside
+4. ~~Convert the Helper's drills to transcripts~~ — **done.** Every leaf in the Dojo is now uniform.
+   Next smallest job there: the **Mind-Reader wants two more drills**, being the only mask with two rather
+   than four. They are now visibly the old narrated style beside
    the rebuilt Mind-Reader. Pattern and reasoning: `docs/the-dojo-design.md`.
 5. ~~Build the Weather-Keeper mask~~ — **done.** White *and* yellow belts, four drills each, branch +
    anatomy + prayers. Next for it: green, where they genuinely believe you are responsible.
