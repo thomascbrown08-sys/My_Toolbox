@@ -1,0 +1,1309 @@
+/* ============================================================
+   PIGGLYVALE — shared stylesheet
+   Every page links this file and adds no local CSS.
+   Restyling the whole site later means editing this file only.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..800,50,1;1,9..144,300..800,50,1&family=Literata:ital,opsz,wght@0,7..72,300..600;1,7..72,300..600&display=swap');
+
+:root {
+  /* --- palette: a spice market at four in the afternoon --- */
+  --paper:      #faf0e8;
+  --paper-deep: #f2e1d4;
+  --ink:        #33203a;
+  --ink-soft:   #5c4560;
+  --plum:       #4b2a50;
+  --plum-deep:  #2e162f;
+  --guava:      #c2456e;
+  --mango:      #e6a034;
+  --sofrito:    #5a7f4e;
+
+  /* --- type --- */
+  --display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --body:    'Literata', Georgia, 'Times New Roman', serif;
+
+  /* --- measure & rhythm --- */
+  --measure: 34rem;
+  --wide:    52rem;
+  --step:    1.5rem;
+
+  --butterfly: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 32'><g fill='%23e6a034'><path d='M20 10C17 3 10 1 6 4 2 7 3 13 8 15c4 1.5 9-1 12-5z'/><path d='M20 10c3-7 10-9 14-6 4 3 3 9-2 11-4 1.5-9-1-12-5z'/><path d='M20 12c-2 5-7 9-11 8-4-1-4-6 0-7 4-1 8-1 11-1z'/><path d='M20 12c2 5 7 9 11 8 4-1 4-6 0-7-4-1-8-1-11-1z'/><ellipse cx='20' cy='13' rx='1.1' ry='6'/></g></svg>");
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.72;
+  font-optical-sizing: auto;
+}
+
+/* ---------- shared display type ---------- */
+
+h1, h2, h3, .kingdom-mark, .plate-number {
+  font-family: var(--display);
+  font-variation-settings: 'SOFT' 50, 'WONK' 1;
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+a { color: var(--guava); text-underline-offset: 0.18em; }
+a:hover { color: var(--plum); }
+
+:focus-visible {
+  outline: 3px solid var(--mango);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* ---------- masthead ---------- */
+
+.site-header {
+  background: var(--plum-deep);
+  color: var(--paper);
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.kingdom-mark {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--paper);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+.kingdom-mark:hover { color: var(--mango); }
+
+.site-header nav a {
+  color: var(--paper-deep);
+  font-size: 0.95rem;
+  margin-left: 1.25rem;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+}
+.site-header nav a:hover { color: var(--mango); border-bottom-color: var(--mango); }
+
+/* ---------- index hero ---------- */
+
+.hero {
+  background: var(--plum);
+  color: var(--paper);
+  padding: clamp(3rem, 9vw, 6rem) 1.5rem clamp(3.5rem, 10vw, 6.5rem);
+  text-align: center;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 8vw, 5rem);
+  font-weight: 700;
+  margin: 0 0 0.6rem;
+  color: var(--paper);
+}
+
+.hero .hero-sub {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(1.1rem, 3vw, 1.45rem);
+  color: var(--mango);
+  margin: 0 auto 1.75rem;
+  max-width: 30rem;
+}
+
+.hero p {
+  max-width: 32rem;
+  margin: 0 auto 1rem;
+  color: var(--paper-deep);
+}
+
+.hero-wing {
+  width: 64px;
+  height: 52px;
+  margin: 0 auto 1.5rem;
+  background: var(--butterfly) center / contain no-repeat;
+}
+
+/* ---------- page shells ---------- */
+
+main { padding: 0 1.5rem 4rem; }
+
+.shelf {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding-top: clamp(2.5rem, 6vw, 4rem);
+}
+
+.shelf > h2 {
+  font-size: 1.6rem;
+  margin: 0 0 0.35rem;
+}
+
+.shelf > .shelf-note {
+  color: var(--ink-soft);
+  margin: 0 0 2.5rem;
+  max-width: var(--measure);
+}
+
+/* ---------- episode plates (index listing) ---------- */
+
+.plates { display: grid; gap: 2.5rem; }
+
+@media (min-width: 46rem) {
+  .plates { grid-template-columns: 1fr 1fr; gap: 3rem 2.5rem; }
+}
+
+.plate {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-left: 3px solid var(--mango);
+  padding-left: 1.25rem;
+}
+.plate:hover .plate-title { color: var(--guava); }
+.plate:hover img { filter: saturate(1.08); }
+
+.plate img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--paper-deep);
+  margin-bottom: 0.9rem;
+}
+
+.plate-number {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--sofrito);
+  margin-bottom: 0.15rem;
+}
+
+.plate-title {
+  font-family: var(--display);
+  font-variation-settings: 'SOFT' 50, 'WONK' 1;
+  font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 0.5rem;
+}
+
+.plate-blurb { margin: 0 0 0.6rem; color: var(--ink-soft); font-size: 0.98rem; }
+
+.plate-lesson {
+  font-size: 0.88rem;
+  color: var(--plum);
+  font-style: italic;
+}
+
+.plate.is-empty {
+  border-left-color: var(--paper-deep);
+  color: var(--ink-soft);
+}
+
+/* ---------- episode page ---------- */
+
+.episode-header {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 4rem) 0 0;
+  text-align: center;
+}
+
+.episode-number {
+  font-family: var(--display);
+  font-size: 1rem;
+  color: var(--sofrito);
+  margin: 0 0 0.5rem;
+}
+
+.episode-header h1 {
+  font-size: clamp(2.1rem, 6vw, 3.4rem);
+  font-weight: 700;
+  margin: 0 auto 0.75rem;
+  max-width: 22ch;
+}
+
+.episode-header .standfirst {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
+.hero-figure { max-width: var(--wide); margin: 2.5rem auto 0; }
+.hero-figure img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--paper-deep); }
+
+figcaption {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin-top: 0.6rem;
+  text-align: center;
+}
+
+/* ---------- the story itself ---------- */
+
+.story {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding-top: 2.75rem;
+}
+
+.story p { margin: 0 0 1.15rem; }
+
+.story > p:first-of-type::first-letter {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 3.4rem;
+  line-height: 0.82;
+  float: left;
+  padding: 0.1em 0.09em 0 0;
+  color: var(--guava);
+}
+
+.story h2 {
+  font-size: 1.35rem;
+  margin: 2.4rem 0 0.9rem;
+}
+
+.story figure { margin: 2.5rem 0; }
+.story figure img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--paper-deep); }
+
+@media (min-width: 60rem) {
+  .story figure.wide { width: var(--wide); margin-left: calc((var(--measure) - var(--wide)) / 2); }
+}
+
+.divider {
+  border: 0;
+  height: 30px;
+  margin: 2.5rem auto;
+  background: var(--butterfly) center / contain no-repeat;
+  opacity: 0.85;
+}
+
+blockquote {
+  margin: 1.6rem 0;
+  padding-left: 1.1rem;
+  border-left: 3px solid var(--mango);
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* ---------- Advisor's Notes ---------- */
+
+.notes {
+  max-width: var(--measure);
+  margin: 3.5rem auto 0;
+  background: var(--paper-deep);
+  border-top: 4px solid var(--plum);
+  padding: 2.25rem 1.75rem 2rem;
+}
+
+.notes-wing {
+  width: 46px;
+  height: 38px;
+  margin: -3.4rem auto 1.1rem;
+  background: var(--butterfly) center / contain no-repeat;
+  filter: drop-shadow(0 0 0 var(--paper-deep));
+}
+
+.notes h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0 0 0.25rem;
+  color: var(--plum);
+}
+
+.notes .notes-byline {
+  text-align: center;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  margin: 0 0 1.75rem;
+}
+
+.notes h3 {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--guava);
+  margin: 1.6rem 0 0.4rem;
+}
+.notes h3:first-of-type { margin-top: 0; }
+
+.notes p { margin: 0 0 0.85rem; font-size: 1rem; }
+
+.notes .verse {
+  font-family: var(--display);
+  font-style: italic;
+  color: var(--plum);
+}
+
+.notes .script {
+  background: var(--paper);
+  border-left: 3px solid var(--sofrito);
+  padding: 0.85rem 1rem;
+  margin: 0.9rem 0;
+  font-style: italic;
+}
+
+/* ---------- talk it over ---------- */
+
+.talk {
+  max-width: var(--measure);
+  margin: 2.5rem auto 0;
+  padding: 0 1.75rem;
+}
+.talk h2 { font-size: 1.25rem; margin: 0 0 0.75rem; }
+.talk ol { margin: 0; padding-left: 1.3rem; }
+.talk li { margin-bottom: 0.65rem; }
+
+/* ---------- recipe card ---------- */
+
+.recipe {
+  max-width: var(--measure);
+  margin: 3rem auto 0;
+  background: var(--paper);
+  border: 1px solid var(--paper-deep);
+  border-top: 6px solid var(--guava);
+  padding: 1.75rem;
+}
+.recipe h2 { font-size: 1.3rem; margin: 0 0 0.3rem; }
+.recipe .recipe-from { font-style: italic; color: var(--ink-soft); margin: 0 0 1.25rem; font-size: 0.95rem; }
+.recipe ul { padding-left: 1.2rem; margin: 0 0 1.25rem; }
+.recipe li { margin-bottom: 0.3rem; }
+
+/* ---------- pager ---------- */
+
+.pager {
+  max-width: var(--wide);
+  margin: 4rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--paper-deep);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: var(--display);
+  font-size: 1rem;
+}
+.pager span { color: var(--ink-soft); }
+
+/* ---------- footer ---------- */
+
+.site-footer {
+  background: var(--plum-deep);
+  color: var(--paper-deep);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  font-size: 0.92rem;
+}
+.site-footer p { margin: 0 auto 0.5rem; max-width: 34rem; }
+.site-footer a { color: var(--mango); }
+
+/* ---------- courtesies ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+@media print {
+  .site-header, .site-footer, .pager { display: none; }
+  body { background: #fff; }
+  .notes { background: #fff; border: 1px solid #999; }
+}
+/* ============================================================
+   PIGGLYVALE — components added for Episode Two
+   Append to assets/style.css. Uses existing custom properties
+   only; adds no new :root variables.
+
+   NOTE: the Episode Two handoff says a previous session already
+   built "the Keep chart, the Movement card, the Washing-Up"
+   into style.css. If that version was pasted in, check for
+   duplicate class names before appending this block.
+   ============================================================ */
+
+/* ---------- After the Washing-Up ---------- */
+/* Class names follow the Keep page, which is the original: .setting for the
+   stage note, p.line per speech, span.who for the speaker, <em> for business. */
+
+.washing-up {
+  max-width: var(--measure);
+  margin: 3.25rem auto 0;
+  padding: 2rem 1.75rem 1.75rem;
+  background: var(--paper-deep);
+  border-left: 4px solid var(--sofrito);
+}
+
+.washing-up h2 {
+  font-size: 1.35rem;
+  color: var(--plum);
+  margin: 0 0 0.5rem;
+}
+
+.washing-up .setting {
+  font-family: var(--display);
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  margin: 0 0 1.5rem;
+}
+
+.washing-up p.line {
+  margin: 0 0 0.7rem;
+  padding-left: 1.4rem;
+  text-indent: -1.4rem;
+  font-size: 1rem;
+}
+
+.washing-up .who {
+  font-family: var(--display);
+  font-variation-settings: 'SOFT' 50, 'WONK' 1;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  color: var(--plum);
+}
+
+.washing-up p.line em { color: var(--ink-soft); }
+
+.washing-up .washing-up-foot {
+  margin: 1.75rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(92, 69, 96, 0.22);
+  font-size: 0.92rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* ---------- the Movement card ---------- */
+
+.movement {
+  margin: 2.5rem 0 0;
+  padding: 1.5rem 1.25rem 1.25rem;
+  background: var(--paper);
+  border: 1px solid rgba(92, 69, 96, 0.2);
+}
+
+.movement .movement-title {
+  font-family: var(--display);
+  font-variation-settings: 'SOFT' 50, 'WONK' 1;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--sofrito);
+  text-align: center;
+  margin: 0 0 1rem;
+}
+
+.movement .movement-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
+.movement .movement-caption {
+  margin: 1rem auto 0;
+  max-width: 32rem;
+  font-size: 0.94rem;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 34rem) {
+  .movement { padding: 1.25rem 0.75rem 1rem; }
+}
+
+/* ---------- the Toolbox citation ---------- */
+/* A deliberate change of room: cream, soft blue, gold, against
+   Pigglyvale's plum and mango. Scoped variables, not global. */
+
+.toolbox {
+  --tb-paper: #fbf7ee;
+  --tb-ink:   #2c3a4a;
+  --tb-soft:  #55697e;
+  --tb-blue:  #4a6f92;
+  --tb-gold:  #b08637;
+
+  display: block;
+  max-width: var(--measure);
+  margin: 3rem auto 0;
+  padding: 2rem 1.75rem 1.75rem;
+  background: var(--tb-paper);
+  color: var(--tb-ink);
+  border: 1px solid rgba(74, 111, 146, 0.28);
+  border-top: 5px solid var(--tb-blue);
+}
+
+.toolbox .toolbox-mark {
+  font-family: var(--display);
+  font-variation-settings: 'SOFT' 50, 'WONK' 1;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tb-gold);
+  margin: 0 0 0.4rem;
+}
+
+.toolbox h2 {
+  font-size: 1.3rem;
+  color: var(--tb-blue);
+  margin: 0 0 1.1rem;
+}
+
+.toolbox p {
+  margin: 0 0 0.9rem;
+  font-size: 1rem;
+}
+
+.toolbox em { color: var(--tb-soft); }
+
+.toolbox .toolbox-limit {
+  margin-top: 1.35rem;
+  padding: 0.85rem 1rem;
+  background: rgba(74, 111, 146, 0.07);
+  border-left: 3px solid var(--tb-gold);
+  font-size: 0.94rem;
+  font-style: italic;
+  color: var(--tb-soft);
+}
+
+.toolbox .toolbox-link {
+  margin: 1.25rem 0 0;
+  font-family: var(--display);
+  font-size: 0.95rem;
+}
+
+.toolbox a { color: var(--tb-blue); }
+.toolbox a:hover { color: var(--tb-gold); }
+
+@media print {
+  .toolbox { background: #fff; }
+  .washing-up { background: #fff; border-left: 3px solid #999; }
+}
+
+/* ============================================================
+   PIGGLYVALE — episode page shell + sidebar navigation
+
+   Episode One's markup already used .layout and .epnav*, but the
+   rules were missing from the copy of this stylesheet in the
+   project. Reconstructed here so the pages render standalone.
+   If your live stylesheet already has these, delete this block.
+   ============================================================ */
+
+.layout { display: block; }
+
+.epnav {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: 2rem 1.5rem 0;
+}
+
+.epnav-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sofrito);
+  margin: 0 0 0.75rem;
+}
+
+.epnav-list { list-style: none; margin: 0 0 1rem; padding: 0; }
+
+.epnav-item { margin-bottom: 0.6rem; }
+
+/* nesting: the Dojo sits under the Keep, the belts page under the Dojo */
+.epnav-item.lv-1 { margin-left: 0.85rem; }
+.epnav-item.lv-2 { margin-left: 1.7rem; }
+.epnav-item.lv-1 .epnav-name { font-size: 0.97rem; }
+.epnav-item.lv-2 .epnav-name { font-size: 0.93rem; }
+.epnav-item.lv-1 .epnav-number,
+.epnav-item.lv-2 .epnav-number { font-size: 0.75rem; }
+
+.epnav-item a {
+  display: block;
+  text-decoration: none;
+  color: var(--ink);
+  border-left: 3px solid var(--paper-deep);
+  padding-left: 0.8rem;
+}
+.epnav-item a:hover { border-left-color: var(--mango); color: var(--guava); }
+.epnav-item.is-current a { border-left-color: var(--guava); }
+
+.epnav-number {
+  display: block;
+  font-family: var(--display);
+  font-size: 0.8rem;
+  color: var(--sofrito);
+}
+
+.epnav-name {
+  font-family: var(--display);
+  font-variation-settings: 'SOFT' 50, 'WONK' 1;
+  font-weight: 600;
+  font-size: 1.02rem;
+  line-height: 1.2;
+}
+
+.epnav-home {
+  font-family: var(--display);
+  font-size: 0.92rem;
+}
+
+/* On a wide screen the nav sits alongside the episode. */
+@media (min-width: 68rem) {
+  .layout {
+    display: grid;
+    grid-template-columns: 14rem minmax(0, 1fr);
+    gap: 0 2.5rem;
+    max-width: 78rem;
+    margin: 0 auto;
+    align-items: start;
+  }
+  .epnav {
+    position: sticky;
+    top: 2rem;
+    max-width: none;
+    margin: 0;
+    padding: clamp(2.5rem, 6vw, 4rem) 0 0 1.5rem;
+  }
+  .layout > main { padding-left: 0; }
+}
+
+@media print { .epnav { display: none; } }
+
+/* ============================================================
+   THE KEEP — chart, ring picker, cards, and the teaching lists
+   Used only by pages/the-map-of-the-keep.html.
+   ============================================================ */
+
+/* ---------- the ring chart ---------- */
+
+.keep-map { margin: 2.5rem auto; }
+.keep-map svg { display: block; width: 100%; height: auto; max-width: 34rem; margin: 0 auto; }
+
+.ring-band { cursor: pointer; transition: filter 0.15s ease; }
+.ring-band:hover { filter: brightness(0.96); }
+
+.ring-label {
+  font-family: var(--display);
+  font-variation-settings: 'SOFT' 50, 'WONK' 1;
+  font-size: 17px;
+  font-weight: 600;
+  fill: var(--plum);
+  text-anchor: middle;
+  pointer-events: none;
+}
+.ring-label.on-plum { fill: var(--paper); }
+
+.ring-sel {
+  fill: none;
+  stroke: var(--mango);
+  stroke-width: 5;
+  pointer-events: none;
+}
+
+/* ---------- the ring picker ---------- */
+
+.keep-pick {
+  list-style: none;
+  margin: 0 0 1.75rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.keep-pick button {
+  font-family: var(--display);
+  font-variation-settings: 'SOFT' 50, 'WONK' 1;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--plum);
+  background: var(--paper);
+  border: 1px solid var(--plum);
+  border-radius: 2px;
+  padding: 0.4rem 0.85rem;
+  cursor: pointer;
+}
+.keep-pick button:hover { background: var(--paper-deep); }
+.keep-pick button[aria-pressed="true"] { background: var(--plum); color: var(--paper); }
+
+.keep-pick .is-watch button { border-color: var(--guava); color: var(--guava); }
+.keep-pick .is-watch button:hover { background: var(--paper-deep); }
+.keep-pick .is-watch button[aria-pressed="true"] { background: var(--guava); color: var(--paper); }
+
+/* ---------- the ring cards ---------- */
+
+.keep-card {
+  background: var(--paper-deep);
+  border-top: 4px solid var(--plum);
+  padding: 1.75rem 1.5rem 1.5rem;
+  margin: 0 0 1.5rem;
+}
+.keep-card.on-watch { border-top-color: var(--guava); }
+
+.keep-card h3 {
+  font-size: 1.45rem;
+  color: var(--plum);
+  margin: 0 0 0.6rem;
+}
+.keep-card.on-watch h3 { color: var(--guava); }
+
+.keep-card .who {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.02rem;
+  color: var(--ink-soft);
+  margin: 0 0 1.1rem;
+}
+
+.keep-card .f { margin: 0 0 0.85rem; font-size: 0.99rem; }
+.keep-card .f b {
+  display: block;
+  font-family: var(--display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--sofrito);
+  margin-bottom: 0.1rem;
+}
+
+.keep-card .keep-say {
+  margin: 1.25rem 0 0;
+  padding: 0.9rem 1rem;
+  background: var(--paper);
+  border-left: 3px solid var(--mango);
+  font-size: 0.99rem;
+}
+.keep-card .keep-say b {
+  display: block;
+  font-family: var(--display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--sofrito);
+  margin-bottom: 0.25rem;
+}
+.keep-card .keep-say q { font-style: italic; color: var(--plum); }
+
+/* ---------- the teaching lists ---------- */
+
+.keep-keys, .keep-four { list-style: none; margin: 1.5rem 0; padding: 0; }
+
+.keep-keys li, .keep-four li {
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--paper-deep);
+}
+.keep-keys li b, .keep-four li b {
+  font-family: var(--display);
+  font-variation-settings: 'SOFT' 50, 'WONK' 1;
+  color: var(--plum);
+}
+.keep-keys li b { display: block; }
+.keep-keys li span { display: block; color: var(--ink-soft); }
+
+.keep-ladder { margin: 1.5rem 0; padding-left: 1.4rem; }
+.keep-ladder li { margin-bottom: 1rem; }
+.keep-ladder li b {
+  font-family: var(--display);
+  font-variation-settings: 'SOFT' 50, 'WONK' 1;
+  color: var(--plum);
+}
+
+.keep-turn {
+  font-family: var(--display);
+  font-variation-settings: 'SOFT' 50, 'WONK' 1;
+  font-size: 1.28rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--plum);
+  text-align: center;
+  margin: 2rem auto;
+  padding: 1.25rem 1rem;
+  border-top: 1px solid var(--paper-deep);
+  border-bottom: 1px solid var(--paper-deep);
+}
+
+@media print {
+  .keep-pick { display: none; }
+  .keep-card { display: block !important; background: #fff; border: 1px solid #999; }
+}
+
+/* ============================================================
+   THE DOJO — belt board, mask cards, and the three-road drill
+   Used only by pages under dojo/.
+   ============================================================ */
+
+.dojo-note {
+  max-width: var(--measure);
+  margin: 0 auto 2rem;
+  font-family: var(--display);
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+/* ---------- belt board ---------- */
+
+.belts { max-width: var(--measure); margin: 0 auto; list-style: none; padding: 0; }
+
+.belt {
+  display: block;
+  margin-bottom: 1.1rem;
+  padding: 1rem 1.1rem 0.9rem 1.4rem;
+  background: var(--paper-deep);
+  border-left: 10px solid var(--belt, var(--ink-soft));
+  text-decoration: none;
+  color: inherit;
+}
+a.belt:hover .belt-name { color: var(--guava); }
+
+.belt-name {
+  font-family: var(--display);
+  font-variation-settings: 'SOFT' 50, 'WONK' 1;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--plum);
+  display: block;
+}
+.belt-bears { margin: 0.2rem 0 0; color: var(--ink-soft); font-size: 0.97rem; }
+.belt-count { font-size: 0.88rem; color: var(--sofrito); font-style: italic; }
+
+.belt.is-white  { --belt: #e8ddcb; }
+.belt.is-yellow { --belt: var(--mango); }
+.belt.is-green  { --belt: var(--sofrito); }
+.belt.is-brown  { --belt: #7a5230; }
+.belt.is-black  { --belt: var(--plum-deep); }
+
+/* ---------- the mask card ---------- */
+
+.mask {
+  max-width: var(--measure);
+  margin: 2.25rem auto;
+  background: var(--paper-deep);
+  border-top: 4px solid var(--plum);
+  padding: 1.6rem 1.5rem 1.3rem;
+}
+.mask h2 { font-size: 1.3rem; color: var(--plum); margin: 0 0 0.3rem; }
+.mask .mask-says {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.12rem;
+  color: var(--guava);
+  margin: 0 0 1.2rem;
+}
+.mask dl { margin: 0; }
+.mask dt {
+  font-family: var(--display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sofrito);
+  margin-top: 1rem;
+}
+.mask dd { margin: 0.15rem 0 0; }
+
+/* ---------- the three roads ---------- */
+
+.road {
+  max-width: var(--measure);
+  margin: 1.5rem auto;
+  padding: 1.25rem 1.35rem 1rem;
+  background: var(--paper);
+  border: 1px solid var(--paper-deep);
+  border-left: 5px solid var(--road, var(--ink-soft));
+}
+.road.is-left  { --road: #8a8fa8; }
+.road.is-right { --road: var(--guava); }
+.road.is-path  { --road: var(--sofrito); }
+.road.is-far   { --road: var(--mango); }
+
+.road-where {
+  font-family: var(--display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--road);
+  margin: 0 0 0.5rem;
+}
+.road-say {
+  font-size: 1.06rem;
+  font-style: italic;
+  color: var(--ink);
+  margin: 0 0 0.9rem;
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--paper-deep);
+}
+.road .buys, .road .costs { margin: 0 0 0.4rem; font-size: 0.97rem; }
+.road .buys b, .road .costs b {
+  font-family: var(--display);
+  font-size: 0.78rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.road .buys b  { color: var(--sofrito); }
+.road .costs b { color: var(--guava); }
+
+/* ---------- the mask on yourself ---------- */
+
+.onself {
+  max-width: var(--measure);
+  margin: 2.5rem auto 0;
+  padding: 1.75rem 1.6rem 1.4rem;
+  background: var(--plum);
+  color: var(--paper-deep);
+  border: 0;
+}
+.onself h2 { color: var(--paper); font-size: 1.25rem; margin: 0 0 0.8rem; }
+.onself p { margin: 0 0 0.85rem; }
+.onself .ask {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--mango);
+  margin: 1.1rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--mango);
+}
+.onself .offsay {
+  background: rgba(250, 240, 232, 0.1);
+  border-left: 3px solid var(--paper-deep);
+  padding: 0.85rem 1rem;
+  margin: 0.9rem 0;
+  font-style: italic;
+}
+.onself a { color: var(--mango); }
+
+@media print {
+  .onself { background: #fff; color: #000; border: 1px solid #999; }
+  .onself h2, .onself .ask { color: #000; }
+}
+
+/* ---------- the Dojo drills (interactive) ---------- */
+
+.drill {
+  max-width: var(--measure);
+  margin: 2rem auto;
+  padding: 1.6rem 1.5rem 1.3rem;
+  background: var(--paper-deep);
+  border-top: 4px solid var(--sofrito);
+}
+
+.drill h2 { font-size: 1.2rem; color: var(--plum); margin: 0 0 0.75rem; }
+.drill > p { margin: 0 0 0.9rem; }
+
+.drill-lands {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.14rem;
+  color: var(--guava);
+  margin: 1.2rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--guava);
+}
+
+.drill-ask {
+  font-family: var(--display);
+  font-variation-settings: 'SOFT' 50, 'WONK' 1;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--sofrito);
+  margin: 1.5rem 0 0.75rem !important;
+}
+
+.choices { display: grid; gap: 0.6rem; margin-bottom: 1.25rem; }
+
+.choice {
+  font-family: var(--body);
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid rgba(92, 69, 96, 0.28);
+  border-left: 4px solid var(--paper-deep);
+  border-radius: 2px;
+  padding: 0.8rem 0.95rem;
+  cursor: pointer;
+}
+.choice:hover { border-left-color: var(--mango); background: #fff; }
+.choice[aria-pressed="true"] { border-left-color: var(--plum); background: #fff; }
+.choice.is-seen::after {
+  content: " ·";
+  color: var(--sofrito);
+  font-weight: 700;
+}
+
+.outcome {
+  background: var(--paper);
+  border-left: 4px solid var(--plum);
+  padding: 1.25rem 1.3rem 1rem;
+  margin-bottom: 1rem;
+}
+.outcome:focus { outline: none; }
+.outcome h3 {
+  font-size: 0.82rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--sofrito);
+  margin: 0 0 0.7rem;
+}
+.outcome p { margin: 0 0 0.85rem; }
+
+.sensei {
+  margin-top: 1.1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--paper-deep);
+}
+.sensei-who {
+  font-family: var(--display);
+  font-variation-settings: 'SOFT' 50, 'WONK' 1;
+  font-weight: 700;
+  font-size: 0.86rem;
+  letter-spacing: 0.05em;
+  color: var(--plum);
+  margin: 0 0 0.4rem !important;
+}
+.sensei p { font-size: 0.99rem; }
+.sensei .names {
+  font-family: var(--display);
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 0 !important;
+}
+
+.drill-again, .drill-done {
+  font-size: 0.94rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  margin: 0 !important;
+}
+.drill-done {
+  margin-top: 0.75rem !important;
+  padding: 0.85rem 1rem;
+  background: var(--paper);
+  border-left: 3px solid var(--mango);
+  font-style: normal;
+}
+
+@media print {
+  .choices { display: none; }
+  .outcome { display: block !important; }
+}
+
+/* ---------- Dojo iconography (SVG, no image pipeline) ---------- */
+
+.mask-icon { width: 100%; height: auto; display: block; }
+.mask-icon .m-face { fill: var(--plum); }
+.mask-icon .m-eye  { fill: var(--paper); }
+.mask-icon .m-mark { fill: none; stroke: var(--mango); stroke-width: 2.4; stroke-linecap: round; }
+.mask-icon .m-mark-f { fill: var(--mango); }
+.mask-icon.is-blank .m-face { fill: var(--paper-deep); stroke: var(--ink-soft); stroke-opacity: 0.35; }
+.mask-icon.is-blank .m-eye  { fill: var(--paper); }
+
+/* the mask shelf on the Dojo front page */
+.shelf-masks { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; }
+@media (min-width: 40rem) { .shelf-masks { grid-template-columns: 1fr 1fr; gap: 1.1rem; } }
+
+.mask-tile {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: 0.9rem;
+  align-items: start;
+  padding: 0.95rem 1rem;
+  background: var(--paper-deep);
+  border-left: 4px solid var(--plum);
+  text-decoration: none;
+  color: inherit;
+}
+a.mask-tile:hover { background: #fff; }
+a.mask-tile:hover .mask-tile-name { color: var(--guava); }
+.mask-tile.is-soon { border-left-color: var(--paper-deep); opacity: 0.72; }
+
+.mask-tile-name {
+  font-family: var(--display);
+  font-variation-settings: 'SOFT' 50, 'WONK' 1;
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: var(--plum);
+  display: block;
+  line-height: 1.2;
+}
+.mask-tile-says {
+  font-family: var(--display);
+  font-style: italic;
+  color: var(--guava);
+  font-size: 0.95rem;
+  margin: 0.2rem 0 0;
+}
+.mask-tile.is-soon .mask-tile-says { color: var(--ink-soft); }
+.mask-tile-belts { font-size: 0.85rem; color: var(--sofrito); margin: 0.35rem 0 0; font-style: italic; }
+
+/* belt swatch */
+.belt-swatch { width: 3.2rem; height: auto; display: block; }
+.belt-swatch .b-band { fill: var(--belt, var(--ink-soft)); }
+.belt-swatch .b-knot { fill: var(--belt, var(--ink-soft)); filter: brightness(0.85); }
+.belt-swatch .b-edge { fill: none; stroke: var(--ink); stroke-opacity: 0.25; stroke-width: 1; }
+
+.belt-choice {
+  display: grid;
+  grid-template-columns: 3.6rem 1fr;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 1rem 1.1rem;
+  background: var(--paper-deep);
+  text-decoration: none;
+  color: inherit;
+}
+a.belt-choice:hover { background: #fff; }
+a.belt-choice:hover .belt-name { color: var(--guava); }
+.belt-choice.is-none { opacity: 0.7; }
+.belt-choice.is-none .belt-name { color: var(--ink-soft); }
+
+/* the practice ring, at the head of every engagement page */
+.ring-art { max-width: 22rem; margin: 0 auto 1.5rem; }
+.ring-art svg { width: 100%; height: auto; display: block; }
+.ring-art .r-ground { fill: var(--paper-deep); }
+.ring-art .r-rope { fill: none; stroke: var(--mango); stroke-width: 2.5; stroke-dasharray: 9 7; stroke-linecap: round; }
+.ring-art .r-post { fill: var(--plum); }
+.ring-art .r-mark { fill: none; stroke: var(--ink-soft); stroke-opacity: 0.4; stroke-width: 1.5; stroke-linecap: round; }
+
+/* the two ditches and the road, as a cross-section */
+.roads-art { max-width: var(--measure); margin: 1.5rem auto 2rem; }
+.roads-art svg { width: 100%; height: auto; display: block; }
+.roads-art .g-fill { fill: var(--paper-deep); }
+.roads-art .g-line { fill: none; stroke: var(--ink-soft); stroke-opacity: 0.5; stroke-width: 2; }
+.roads-art .g-road { fill: none; stroke: var(--sofrito); stroke-width: 4; stroke-linecap: round; }
+.roads-art .g-label {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 13px;
+  fill: var(--ink-soft);
+  text-anchor: middle;
+}
+.roads-art .g-label.on-road { fill: var(--sofrito); font-weight: 700; }
+
+/* The two ways in. Every mask is entered by the reader's own weak side, and
+   there are two of those: folding when it is worn at you, and reaching for it
+   yourself. Both lines are labelled so neither has to carry the ambiguity. */
+.mask-tile-hard {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin: 0.45rem 0 0;
+  padding-top: 0.45rem;
+  border-top: 1px solid rgba(92, 69, 96, 0.18);
+  display: block;
+}
+.mask-tile-hard.is-mine {
+  margin-top: 0.3rem;
+  padding-top: 0;
+  border-top: 0;
+}
+.mask-tile-hard b {
+  font-family: var(--display);
+  font-size: 0.74rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--sofrito);
+}
+.mask-tile-hard.is-mine b { color: var(--guava); }
+
+/* the same pair, at full size, on a branch page */
+.two-ways { margin: 1.5rem 0; }
+.two-ways p { margin: 0 0 0.75rem; padding-left: 1rem; border-left: 3px solid var(--sofrito); }
+.two-ways p.is-mine { border-left-color: var(--guava); }
+.two-ways b {
+  display: block;
+  font-family: var(--display);
+  font-size: 0.76rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sofrito);
+}
+.two-ways p.is-mine b { color: var(--guava); }
+
+/* ---------- transcripts inside a drill outcome ----------
+   Same markup as the Washing-Up (p.line / span.who / em) so there is one
+   dialogue convention on the site. Notes pin the analysis to the line it is
+   about, instead of banking it all up at the end. */
+
+.outcome p.line {
+  margin: 0 0 0.55rem;
+  padding-left: 1.4rem;
+  text-indent: -1.4rem;
+  font-size: 1rem;
+}
+.outcome .who {
+  font-family: var(--display);
+  font-variation-settings: 'SOFT' 50, 'WONK' 1;
+  font-weight: 700;
+  font-size: 0.86rem;
+  letter-spacing: 0.04em;
+  color: var(--plum);
+}
+.outcome p.line em { color: var(--ink-soft); }
+
+.beat-note {
+  margin: 0.9rem 0 1.1rem;
+  padding: 0.7rem 0.9rem;
+  background: var(--paper-deep);
+  border-left: 3px solid var(--mango);
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+.beat-note b { font-style: normal; color: var(--plum); }
+.outcome .after { margin-top: 1rem; }
+
+/* ---------- the prayer that closes a case ----------
+   Not a summary and not a petition for skill. Set apart visually so it does
+   not read as one more section of the exercise. */
+
+.prayer {
+  max-width: var(--measure);
+  margin: 2.5rem auto 0;
+  padding: 1.75rem 1.75rem 1.5rem;
+  background: var(--paper-deep);
+  border-top: 4px solid var(--sofrito);
+}
+.prayer h2 { font-size: 1.15rem; color: var(--plum); margin: 0 0 0.7rem; }
+.prayer .prayer-why { font-size: 0.97rem; color: var(--ink-soft); margin: 0 0 1.25rem; }
+.prayer .prayer-body {
+  font-family: var(--display);
+  font-variation-settings: 'SOFT' 50, 'WONK' 1;
+  font-style: italic;
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: var(--plum);
+  margin: 0;
+  padding-left: 1.1rem;
+  border-left: 3px solid var(--mango);
+}
+.prayer .prayer-body span { display: block; margin-bottom: 0.6rem; }
+.prayer .prayer-body span:last-child { margin-bottom: 0; }
+.prayer .prayer-amen { font-style: normal; letter-spacing: 0.06em; color: var(--guava); }
