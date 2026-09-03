@@ -1,111 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Chronicles of Pigglyvale</title>
-<meta name="description" content="Stories from a small kingdom run mostly out of its kitchen.">
-<link rel="stylesheet" href="assets/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Toolbox — a plain guide to patterns and treatments</title>
+<link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
 
-<header class="site-header">
-  <a class="kingdom-mark" href="index.html">The Chronicles of Pigglyvale</a>
-  <nav>
-    <a href="index.html">Episodes</a>
-    <a href="pages/the-map-of-the-keep.html">The Keep</a>
-    <a href="dojo/index.html">The Dojo</a>
-    <a href="#about">About</a>
-  </nav>
+<header class="mast">
+  <div class="wrap">
+    <div>
+      <a href="index.html"><span class="title">My Toolbox</span></a><br>
+      <span class="sub">Plain guides to what's going on, and what helps</span>
+    </div>
+    <nav><a href="orientation.html">Orientation</a></nav>
+  </div>
 </header>
 
-<section class="hero">
-  <div class="hero-wing" role="presentation"></div>
-  <h1>The Chronicles of Pigglyvale</h1>
-  <p class="hero-sub">Stories from a small kingdom run mostly out of its kitchen</p>
-  <p>Her Majesty the Beautiful Princess Carolyn rules a kingdom of about two hundred souls, one good road,
-     and a pepper patch nobody can agree about. This is the record of what happens there.</p>
-  <p>Set down faithfully, and with only a little embellishment, by Thomas the Drake of Snouton,
-     Storykeeper and Master of Lessons.</p>
-</section>
-
-<main>
-
-  <div class="shelf">
-    <h2>The Episodes</h2>
-    <p class="shelf-note">Newest at the top. Every episode ends with the Advisor's Notes, in which Thomas
-       explains what he thinks happened — and, on occasion, admits he had it backwards.</p>
-
-    <div class="plates">
-
-      <!-- ================= EPISODE TEMPLATE =================
-           Copy this block for each new episode. Episodes run in SEQUENCE,
-           oldest first, so a new one goes at the END of the run — above the
-           Map of the Keep, which stays last as a companion piece.
-
-      <a class="plate" href="episodes/ep-000-slug.html">
-        <img src="images/ep-000/01-hero.png" alt="">
-        <span class="plate-number">Episode Nought</span>
-        <h3 class="plate-title">Title</h3>
-        <p class="plate-blurb">One-sentence hook that doesn't give away the hinge.</p>
-        <p class="plate-lesson">The lesson, in a half-line.</p>
-      </a>
-
-      ==================================================== -->
-
-      <a class="plate" href="episodes/ep-001-the-small-yeses.html">
-        <img src="images/ep-001/01-hero.png" alt="Princess Carolyn cooking at the long counter of the Kitchen Royal, Pim beside her on a step stool, and Thomas filling the doorway behind them.">
-        <span class="plate-number">Episode One</span>
-        <h3 class="plate-title">The Small Yeses</h3>
-        <p class="plate-blurb">Four promises are made in a single afternoon, and every one of them is made
-           kindly.</p>
-        <p class="plate-lesson">On saying no early, and saying it kindly.</p>
-      </a>
-
-      <a class="plate" href="episodes/ep-002-the-column-nobody-read.html">
-        <img src="images/ep-002/01-hero.png" alt="Marisol Vega unloading a barrel-shaped clay oven from a handcart at the top of Marketrow while a crowd gathers.">
-        <span class="plate-number">Episode Two</span>
-        <h3 class="plate-title">The Column Nobody Read</h3>
-        <p class="plate-blurb">A stranger arrives with her own oven in a week the kingdom has no oven, and
-           everybody is asked to be delighted about it.</p>
-        <p class="plate-lesson">On trust as a total you can only reach by adding up small things.</p>
-      </a>
-
-      <a class="plate" href="pages/the-map-of-the-keep.html">
-        <img src="images/keep/02-carolyn-gate.png" alt="Carolyn in her kitchen doorway at dusk, holding out a covered dish, warm and completely level.">
-        <span class="plate-number">A Chart from the Kingdom</span>
-        <h3 class="plate-title">The Map of the Keep</h3>
-        <p class="plate-blurb">Six rooms, working inward, and one mark that can be set anywhere. Carolyn
-           drew it on the back of a bread list, the Friday after Fair Week.</p>
-        <p class="plate-lesson">Who gets which key, and how anybody moves</p>
-      </a>
-
-      <a class="plate" href="dojo/index.html">
-        <img src="images/keep/01-keep-aerial.png" alt="An aerial view of Pigglyvale drawn as rings, with market stalls, gardens and a courtyard at the centre.">
-        <span class="plate-number">A Wing of the Kingdom</span>
-        <h3 class="plate-title">The Dojo</h3>
-        <p class="plate-blurb">Come in by the sentence somebody said to you. Pick what you would really
-           say, and find out what it caused. Nothing here happened &mdash; Bruno is acting, and enjoying it
-           more than is decent.</p>
-        <p class="plate-lesson">Two ditches and a road &mdash; and the mask on your own face</p>
-      </a>
-
+<div class="layout">
+  <nav class="sidebar" aria-label="Toolkit navigation">
+    <div class="top-links">
+      <a href="index.html" class="current" aria-current="page">Index</a>
+      <a href="orientation.html">Orientation</a>
     </div>
-  </div>
+    <details open>
+      <summary>Patterns</summary>
+      <ul>
+      <li><a href="patterns/double-bind.html">The double bind</a></li>
+      <li><a href="patterns/disorganized-attachment.html">Disorganized attachment</a></li>
+      <li><a href="patterns/learned-helplessness.html">Learned helplessness</a></li>
+      <li><a href="patterns/complex-trauma-triad.html">The complex-trauma triad</a></li>
+      <li><a href="patterns/moral-injury.html">Moral injury</a></li>
+      <li><a href="patterns/parentification.html">Parentification</a></li>
+      <li><a href="patterns/toxic-shame-vs-guilt.html">Toxic shame vs. guilt</a></li>
+      <li><a href="patterns/godly-grief-vs-worldly-grief.html">Godly grief vs. worldly grief</a></li>
+      <li><a href="patterns/emotional-flashbacks.html">Emotional flashbacks</a></li>
+      <li><a href="patterns/repetition-compulsion.html">Repetition compulsion</a></li>
+      <li><a href="patterns/splitting.html">Splitting</a></li>
+      <li><a href="patterns/codependency.html">Codependency</a></li>
+      <li><a href="patterns/nowhere-safe-to-fail.html">Nowhere safe to fail</a></li>
+      <li><a href="patterns/contingent-worth.html">Contingent worth</a></li>
+      <li><a href="patterns/over-responsibility.html">Over-responsibility for others' feelings</a></li>
+      <li><a href="patterns/emotional-labour.html">Emotional labour</a></li>
+      <li><a href="patterns/hypervigilance.html">Hypervigilance</a></li>
+      <li><a href="patterns/fawning.html">Fawning</a></li>
+      <li><a href="patterns/differentiation.html">Differentiation</a></li>
+      <li><a href="patterns/ambiguous-loss.html">Ambiguous loss</a></li>
+      <li><a href="patterns/moral-licensing.html">Moral licensing</a></li>
+      </ul>
+    </details>
+    <details open>
+      <summary>Dynamics</summary>
+      <ul>
+      <li><a href="dynamics/institutional-betrayal.html">Institutional betrayal</a></li>
+      <li><a href="dynamics/testimonial-injustice.html">Testimonial injustice</a></li>
+      <li><a href="dynamics/coercive-control.html">Coercive control</a></li>
+      <li><a href="dynamics/darvo.html">DARVO</a></li>
+      <li><a href="dynamics/labelling-theory.html">Labelling theory</a></li>
+      <li><a href="dynamics/disenfranchised-grief.html">Disenfranchised grief</a></li>
+      <li><a href="dynamics/iatrogenic-harm.html">Iatrogenic harm</a></li>
+      </ul>
+    </details>
+    <details open>
+      <summary>Modalities</summary>
+      <ul>
+      <li><a href="modalities/cbt.html">Cognitive behavioral therapy</a></li>
+      <li><a href="modalities/emdr.html">EMDR</a></li>
+      <li><a href="modalities/act.html">ACT</a></li>
+      <li><a href="modalities/somatic-work.html">Somatic / polyvagal work</a></li>
+      <li><a href="modalities/adaptive-disclosure.html">Adaptive Disclosure</a></li>
+      <li><a href="modalities/confession-spiritual-direction.html">Confession & spiritual direction</a></li>
+      <li><a href="modalities/family-systems.html">Family systems therapy</a></li>
+      <li><a href="modalities/sabbath-practice.html">Sabbath as regulation</a></li>
+      <li><a href="modalities/christian-recovery-groups.html">Christian recovery groups</a></li>
+      <li><a href="modalities/lament.html">Lament as practice</a></li>
+      <li><a href="modalities/puritan-self-examination.html">Puritan self-examination</a></li>
+      <li><a href="modalities/rupture-and-repair.html">Rupture and repair</a></li>
+      <li><a href="modalities/learned-optimism.html">Learned optimism & behavioural activation</a></li>
+      <li><a href="modalities/ifs.html">Internal Family Systems</a></li>
+      </ul>
+    </details>
+  </nav>
+  <main>
+  <div class="art"><img src="assets/img/hero.jpg" alt="An open wooden toolbox on a sunlit windowsill, overlooking a quiet morning landscape" loading="lazy"></div>
+  <p class="dek">
+    A short, honest introduction to the patterns behind common struggles, and the
+    treatments that actually address them — written so you can bring an informed
+    question to a session, not so you can diagnose yourself before one.
+  </p>
 
-  <div class="shelf" id="about">
-    <h2>About this place</h2>
-    <p class="shelf-note">Pigglyvale is small on purpose. Nobody here is a villain, everybody here is wrong
-       sometimes, and the apologies are real ones — said out loud, with the parts named. That is most of what
-       the kingdom is for.</p>
-  </div>
+  <p>
+    Two kinds of entries live here. <strong>Patterns</strong> name a mechanism —
+    what's actually happening, and why it happens. <strong>Modalities</strong>
+    describe a treatment — what it looks like in practice, and what it's for.
+    Every pattern points toward the modalities that address it. Nothing here
+    replaces a clinician; it's meant to make the first conversation with one
+    more useful.
+  </p>
 
+  <p class="section-label">Start here</p>
+  <ul class="tool-index">
+    <li>
+      <h3><a href="orientation.html">What a diagnosis means</a></h3>
+      <p>Before you look anything else up — how to read a label as
+      information for treatment, not a verdict to live inside.</p>
+    </li>
+  </ul>
+
+  <p class="section-label">Patterns — naming the mechanism</p>
+  <ul class="tool-index">
+    <li>
+      <h3><a href="patterns/double-bind.html">The double bind</a></h3>
+      <p class="how">When every available response gets punished. Read this
+      if any choice you make in a relationship feels like it's already wrong.</p>
+    </li>
+    <li>
+      <h3><a href="patterns/disorganized-attachment.html">Disorganized attachment</a></h3>
+      <p class="how">When the person you needed safety from was also the
+      danger.</p>
+    </li>
+    <li>
+      <h3><a href="patterns/learned-helplessness.html">Learned helplessness</a></h3>
+      <p class="how">Why acting on your own behalf can still feel pointless
+      or dangerous, long after it stopped being either.</p>
+    </li>
+    <li>
+      <h3><a href="patterns/complex-trauma-triad.html">The complex-trauma triad</a></h3>
+      <p class="how">Dysregulated emotion, a self-concept that assumes the
+      worst, and difficulty with closeness — why these three travel together.</p>
+    </li>
+    <li>
+      <h3><a href="patterns/moral-injury.html">Moral injury</a></h3>
+      <p class="how">The wound of having actually done wrong — distinct from
+      fear-based trauma, and treated differently.</p>
+    </li>
+    <li>
+      <h3><a href="patterns/parentification.html">Parentification</a></h3>
+      <p class="how">When a child is made responsible for an adult's needs,
+      instead of the other way around.</p>
+    </li>
+    <li>
+      <h3><a href="patterns/toxic-shame-vs-guilt.html">Toxic shame vs. guilt</a></h3>
+      <p class="how">"I did something bad" and "I am bad" aren't the same
+      sentence, and they don't resolve the same way.</p>
+    </li>
+    <li>
+      <h3><a href="patterns/godly-grief-vs-worldly-grief.html">Godly grief vs. worldly grief</a></h3>
+      <p class="how">Paul's own distinction — sorted by what the sorrow
+      produces, not by how heavy it feels.</p>
+    </li>
+    <li>
+      <h3><a href="patterns/emotional-flashbacks.html">Emotional flashbacks</a></h3>
+      <p class="how">A flood of an old feeling with no memory attached —
+      easy to mistake for overreacting to the present.</p>
+    </li>
+    <li>
+      <h3><a href="patterns/repetition-compulsion.html">Repetition compulsion</a></h3>
+      <p class="how">Why familiar can feel safer than good, even when it
+      isn't good at all.</p>
+    </li>
+    <li>
+      <h3><a href="patterns/splitting.html">Splitting</a></h3>
+      <p class="how">Sorting people, or yourself, into wholly good or wholly
+      bad, with no working middle.</p>
+    </li>
+    <li>
+      <h3><a href="patterns/codependency.html">Codependency</a></h3>
+      <p class="how">When your own stability fuses with managing someone
+      else's — and real love becomes the lock.</p>
+    </li>
+    <li>
+      <h3><a href="patterns/nowhere-safe-to-fail.html">Nowhere safe to fail</a></h3>
+      <p class="how">When there's no safe middle between disproportionate
+      punishment and total secrecy — so attempts migrate to secrecy.</p>
+    </li>
+    <li>
+      <h3><a href="patterns/contingent-worth.html">Contingent worth</a></h3>
+      <p class="how">"I am acceptable while I am producing" — quieter than
+      toxic shame, and much harder to spot.</p>
+    </li>
+    <li>
+      <h3><a href="patterns/over-responsibility.html">Over-responsibility for others' feelings</a></h3>
+      <p class="how">If you are upset, I did it, and I can fix it.</p>
+    </li>
+    <li>
+      <h3><a href="patterns/emotional-labour.html">Emotional labour</a></h3>
+      <p class="how">Work that produces no artefact — so nobody counts it,
+      including you.</p>
+    </li>
+    <li>
+      <h3><a href="patterns/hypervigilance.html">Hypervigilance</a></h3>
+      <p class="how">The scanning that once kept you safe, and never
+      learned to switch off.</p>
+    </li>
+    <li>
+      <h3><a href="patterns/fawning.html">Fawning</a></h3>
+      <p class="how">Fight, flight, freeze — and the one that gets mistaken
+      for a personality.</p>
+    </li>
+    <li>
+      <h3><a href="patterns/differentiation.html">Differentiation</a></h3>
+      <p class="how">Staying close to someone without dissolving into
+      their emotional weather.</p>
+    </li>
+    <li>
+      <h3><a href="patterns/ambiguous-loss.html">Ambiguous loss</a></h3>
+      <p class="how">Grief for someone still alive.</p>
+    </li>
+    <li>
+      <h3><a href="patterns/moral-licensing.html">Moral licensing</a></h3>
+      <p class="how">How a good deed quietly buys permission for a poor
+      one.</p>
+    </li>
+  </ul>
+
+  <p class="section-label">Dynamics — patterns done to a person, not in one</p>
+  <ul class="tool-index">
+    <li>
+      <h3><a href="dynamics/institutional-betrayal.html">Institutional betrayal</a></h3>
+      <p class="how">When the system meant to help you becomes a second
+      source of harm.</p>
+    </li>
+    <li>
+      <h3><a href="dynamics/testimonial-injustice.html">Testimonial injustice</a></h3>
+      <p class="how">Being disbelieved because of who you are, not what
+      you actually said.</p>
+    </li>
+    <li>
+      <h3><a href="dynamics/coercive-control.html">Coercive control</a></h3>
+      <p class="how">Not one incident — an ongoing apparatus of isolation,
+      surveillance, and micro-regulation.</p>
+    </li>
+    <li>
+      <h3><a href="dynamics/darvo.html">DARVO</a></h3>
+      <p class="how">Deny, attack, reverse victim and offender — a specific,
+      recognizable sequence.</p>
+    </li>
+    <li>
+      <h3><a href="dynamics/labelling-theory.html">Labelling theory</a></h3>
+      <p class="how">When one act becomes the lens every future one gets
+      read through.</p>
+    </li>
+    <li>
+      <h3><a href="dynamics/disenfranchised-grief.html">Disenfranchised grief</a></h3>
+      <p class="how">Grief no one has granted you standing to feel.</p>
+    </li>
+    <li>
+      <h3><a href="dynamics/iatrogenic-harm.html">Iatrogenic harm</a></h3>
+      <p class="how">Harm from the treatment itself, not the condition it
+      was meant to address.</p>
+    </li>
+  </ul>
+
+  <p class="section-label">Modalities — what treatment involves</p>
+  <ul class="tool-index">
+    <li>
+      <h3><a href="modalities/cbt.html">Cognitive behavioral therapy</a></h3>
+      <p class="how">Structured, skills-based, and usually the first thing
+      offered. What a session actually involves.</p>
+    </li>
+    <li>
+      <h3><a href="modalities/emdr.html">EMDR</a></h3>
+      <p class="how">A specific protocol for processing a specific memory —
+      not talk therapy, and not for everything.</p>
+    </li>
+    <li>
+      <h3><a href="modalities/act.html">ACT</a></h3>
+      <p class="how">Values as an anchor, not a mood to chase.</p>
+    </li>
+    <li>
+      <h3><a href="modalities/somatic-work.html">Somatic / polyvagal-informed work</a></h3>
+      <p class="how">Working with the body, not just the story about it.</p>
+    </li>
+    <li>
+      <h3><a href="modalities/adaptive-disclosure.html">Adaptive Disclosure</a></h3>
+      <p class="how">The named treatment for moral injury specifically.</p>
+    </li>
+    <li>
+      <h3><a href="modalities/confession-spiritual-direction.html">Confession &amp; spiritual direction</a></h3>
+      <p class="how">A distinctly Christian modality, not a coat of paint on
+      a secular one.</p>
+    </li>
+    <li>
+      <h3><a href="modalities/family-systems.html">Family systems therapy</a></h3>
+      <p class="how">Seeing a pattern across generations, not just in one
+      person.</p>
+    </li>
+    <li>
+      <h3><a href="modalities/sabbath-practice.html">Sabbath as regulation</a></h3>
+      <p class="how">Rest that isn't earned — a weekly argument against a
+      trained belief that it has to be.</p>
+    </li>
+    <li>
+      <h3><a href="modalities/christian-recovery-groups.html">Christian recovery groups</a></h3>
+      <p class="how">A synthesis of accountability and gospel content that's
+      already been built.</p>
+    </li>
+    <li>
+      <h3><a href="modalities/lament.html">Lament as practice</a></h3>
+      <p class="how">A structured way to tell God the truth about pain.</p>
+    </li>
+    <li>
+      <h3><a href="modalities/puritan-self-examination.html">Puritan self-examination</a></h3>
+      <p class="how">A daily reckoning with the heart — including a real
+      warning against doing it too much.</p>
+    </li>
+    <li>
+      <h3><a href="modalities/rupture-and-repair.html">Rupture and repair</a></h3>
+      <p class="how">Securely attached pairs don't rupture less. They
+      repair more reliably.</p>
+    </li>
+    <li>
+      <h3><a href="modalities/learned-optimism.html">Learned optimism &amp; behavioural activation</a></h3>
+      <p class="how">The treatment side of learned helplessness.</p>
+    </li>
+    <li>
+      <h3><a href="modalities/ifs.html">Internal Family Systems</a></h3>
+      <p class="how">A confusingly similar name to family systems therapy
+      — and a genuinely different thing.</p>
+    </li>
+  </ul>
 </main>
+</div>
 
-<footer class="site-footer">
-  <p>Made for Carolyn.</p>
-  <p><em>The line dividing good and evil cuts through the heart of every human being.</em></p>
-</footer>
+<footer class="site">My Toolbox — a companion resource, not a substitute for a clinician or a pastor.</footer>
 
 </body>
 </html>
