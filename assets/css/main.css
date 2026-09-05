@@ -172,6 +172,11 @@ a:hover{color:var(--gold-soft);}
 .related .tag{font-family:"Helvetica Neue",Arial,sans-serif;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap;}
 .related .soon{color:var(--ink-soft);font-style:italic;}
 
+/* ---------- Plain list (recognition prompts, further reading) ---------- */
+
+.plain-list{margin:0 0 1.1rem;padding-left:1.3rem;}
+.plain-list li{margin-bottom:.5rem;}
+
 /* ---------- Look-up closing block ---------- */
 
 .lookup{
